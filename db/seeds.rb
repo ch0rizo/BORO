@@ -17,5 +17,6 @@ User.destroy_all
   end
 end
 
+# NEW
 puts '> Finished seeding!'
 puts "> Made #{User.count} users, and #{Item.count} items"

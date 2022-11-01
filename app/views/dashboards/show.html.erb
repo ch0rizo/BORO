@@ -3,6 +3,10 @@
 <p><%= @user.phone_number %></p>
 <p><%= @user.email %></p>
 <p><%= @user.about %></p>
+
+<h2>Your Listed Items</h2>
 <% @user.items.each do |item| %>
   <p><%= item.title %> - $<%= item.price %></p>
 <% end %>
+
+<h2>Your </h2>

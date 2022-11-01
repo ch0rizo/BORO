@@ -1,17 +1,16 @@
-<h1><%= @item.title %></h1>
+<h2><%= @item.title %></h2>
 <p><%= @item.description %></p>
-<p><%= @item.price %></p>
+<p>$<%= @item.price %></p>
 
 <% if current_user == @item.user %>
   <%= link_to "Edit Me!", edit_item_path, class: "btn btn-ghost" %>
 <% end %>
 
 <% if current_user != @item.user %>
-<%= link_to "Lend Me!!", new_item_lending_path(@item), class: "btn btn-ghost" %>
+  <%= simple_form_for([@item, @lending]) do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.submit "Lend Me", class: "btn btn-primary btn-lg btn-block btn-booking" %>
+  <% end %>
 <% end %>
 
-<%= simple_form_for([@developer, @booking]) do |f| %>
-  <%= f.input :start_date, as: :string, label: "Dates", placeholder: "From", wrapper_html: { class: "inline_field_wrapper" } %>
-  <%= f.input :end_date, as: :string, label: '&nbsp;'.html_safe, placeholder: "To", disabled: true, wrapper_html: { class: "inline_field_wrapper" } %>
-  <%= f.submit "book", class: "btn btn-primary btn-lg btn-block btn-booking" %>
-<% end %>

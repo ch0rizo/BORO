@@ -1,0 +1,28 @@
+.container_review {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 40vh;
+  width: 100%;
+  background-color: #eeeded;
+}
+.review {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1%;
+}
+
+.review img {
+  margin: 1%;
+  height: 18vh;
+  width: 10vw;
+  border-radius: 50%;
+  object-position: center;
+  object-fit: cover
+}
+.review p{
+  margin-top: 5%;
+}

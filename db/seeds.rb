@@ -19,7 +19,7 @@ end
   3.times do
     item_url = "https://picsum.photos/300/200"
     item_file = URI.open(item_url)
-    item.photo.attach(io: item_file, filename: "#{rand(1..100)}.png", content_type: 'image/png')
+    item.photo.attach(io: item_file, filename: "#{Item.title}.png", content_type: 'image/png')
   end
 end
 

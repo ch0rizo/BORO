@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @user = current_user
     @item.user = @user
-    
+
     if @item.save
       redirect_to items_path, notice: 'Offer was successfully created.'
     else
@@ -38,6 +38,15 @@ class ItemsController < ApplicationController
     else
       redirect_to item_path(@item), alert: 'Only the owner can edit this item.'
     end
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    if current_user == @item.user
+      @item.destroy
+    end
+
+    redirect_to items_path
   end
 
 

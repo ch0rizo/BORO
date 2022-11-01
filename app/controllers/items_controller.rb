@@ -23,6 +23,22 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    @user = current_user
+
+    if @user == @item.user
+      @item.update(item_params)
+      redirect_to item_path(@item), notice: 'Offer was successfully updated.'
+    else
+      redirect_to item_path(@item), alert: 'Only the owner can edit this item.'
+    end
+  end
+
 
   private
 

@@ -6,6 +6,10 @@
   <%= link_to "Edit Me!", edit_item_path, class: "btn btn-ghost" %>
 <% end %>
 
+<% if current_user == @item.user %>
+  <%= link_to "Destroy Me!", item_path(@item),  data: {turbo_method: :delete}, class: "btn btn-ghost" %>
+<% end %>
+
 <% if current_user != @item.user %>
   <%= simple_form_for([@item, @lending]) do |f| %>
     <%= f.input :start_date %>
@@ -13,4 +17,3 @@
     <%= f.submit "Lend Me", class: "btn btn-primary btn-lg btn-block btn-booking" %>
   <% end %>
 <% end %>
-

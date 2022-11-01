@@ -5,7 +5,7 @@ Item.destroy_all
 User.destroy_all
 
 
-5.times do
+2.times do
   user = User.new(email: Faker::Internet.email, password: "password", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, about: Faker::Lorem.paragraph(sentence_count: 3), phone_number: Faker::PhoneNumber.cell_phone_in_e164)
   user.save
   profile_url = "https://picsum.photos/100"

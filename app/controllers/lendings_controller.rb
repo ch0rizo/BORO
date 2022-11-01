@@ -13,7 +13,7 @@ class LendingsController < ApplicationController
 
   private
 
-
+  
   def lending_params
     params.require(:lending).permit(:start_date, :end_date)
   end

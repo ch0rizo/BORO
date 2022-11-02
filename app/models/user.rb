@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :items
   has_many :lendings
   has_many :requests, through: :items, source: :lendings
+  has_many :reviews, through: :lendings
 
   validates :first_name, presence: true
   validates :last_name, presence: true

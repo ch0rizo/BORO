@@ -13,7 +13,12 @@
         <div class="offer">
           <p>or</p>
           <button name="button2" type="submit" class="btn btn-banner" >
-            <i class="fa-solid fa-list"></i></i> <%= link_to 'List Item', new_item_path %>
+            <i class="fa-solid fa-list"></i></i>
+            <% if current_user %>
+              <%= link_to 'List Item', new_item_path %>
+              <% else %>
+              <%= link_to 'List Item', new_user_session_path %>
+              <% end %>
           </button>
         </div>
 

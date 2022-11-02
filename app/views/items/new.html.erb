@@ -4,6 +4,7 @@
     <%= f.input :title %>
     <%= f.input :category, collection: %i[Stereo Tools Camera Art Surfboards Scubagear Grill Bike Utilities Camping Instruments Wilderness Other]%>
     <%= f.input :description %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.input :price %>
     <%= f.input :deposit %>
     <%= f.submit %>

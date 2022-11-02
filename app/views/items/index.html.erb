@@ -2,8 +2,8 @@
   <h1 style="text-align: center;" class="my-4">Lend Me!</h1>
   <div class="cards">
     <% @items.each do |item| %>
-      <% if item.photos_attachments[1] != nil %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path item.photos_attachments[1].key, height: 300, crop: :fill %>')">
+      <% if item.photos_attachments[0] != nil %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path item.photos_attachments[0].key, height: 300, crop: :fill %>')">
           <h3> <%= link_to "#{item.title}", item_path(item) %> </h3>
           <h6> <%= item.description %></h6>
           <p> $<%= item.price %> / day</p>

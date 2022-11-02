@@ -12,7 +12,7 @@ User.destroy_all
   profile_file = URI.open(profile_url)
   user.photo.attach(io: profile_file, filename: 'profile_img.png', content_type: 'image/png')
   6.times do
-    item = Item.new(title: Faker::Appliance.equipment, description: Faker::Lorem.paragraph(sentence_count: 2), price: Faker::Number.between(from: 10.0, to: 80.0).round(2), deposit: rand(90..140), category: Faker::Commerce.department, user: user)
+    item = Item.new(title: Faker::Appliance.equipment, description: Faker::Lorem.paragraph(sentence_count: 2), price: Faker::Number.between(from: 10.0, to: 80.0).round(2), deposit: rand(90..140), category: %w[Stereo Tools Camera Art Surfboards Scubagear Grill Bike Utilities Camping Instruments Wilderness Other].sample, user: user)
     item.save
     3.times do
       item_url = "https://picsum.photos/300/200"

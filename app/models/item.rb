@@ -4,5 +4,7 @@ class Item < ApplicationRecord
 
   belongs_to :user
 
+  validates :title, presence: true
+  validates :description, length: { maximum: 500 }
   validates :category, inclusion: %w[Stereo Tools Camera Art Surfboards Scubagear Grill Bike Utilities Camping Instruments Wilderness Other]
 end

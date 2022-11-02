@@ -6,9 +6,12 @@
   <p>BIO: <%= @user.about %></p>
 
   <h3>Someone Wants to <br> Borrow Your:</h3>
-  <% @user.requests.each do |lending| %>
-    <p><%= lending.item.title %> - <%= lending.user.first_name %> 
-    </p>
+  <% @user.requests.pending.each do |lending| %>
+    <p><%= lending.item.title %> - <%= lending.user.first_name %></p>
+    <%= link_to "Accept",
+      accept_lending_path(lending),
+      data: {turbo_method: :patch}
+    %>
   <% end %>
 
 <h3>Your Borrowed Items</h3>

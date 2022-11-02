@@ -3,10 +3,17 @@
   <h3> Your Details</h3>
   <p><%= @user.phone_number %></p>
   <p><%= @user.email %></p>
-  <p><%= @user.about %></p>
+  <p>BIO: <%= @user.about %></p>
 
-  <h3>Your Listed Items</h3>
-  <% @user.items.each do |item| %>
-    <p><%= item.title %> - $<%= item.price %></p>
+  <h3>Someone Wants to <br> Borrow Your:</h3>
+  <% @user.requests.each do |lending| %>
+    <p><%= lending.item.title %> - <%= lending.user.first_name %> 
+    </p>
   <% end %>
+
+<h3>Your Borrowed Items</h3>
+<% @user.lendings.each do |lending| %>
+  <p><%= Item.find(lending.item_id).title %> - <%= lending.status %>...</p>
+<% end %>
 </div>
+

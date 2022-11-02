@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_one_attached :photo
   has_many :items
+  has_many :lendings
+  has_many :requests, through: :items, source: :lendings
 
   validates :first_name, presence: true
   validates :last_name, presence: true

@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :items do
     resources :lendings, only: %i[create]
   end
-  resource :dashboard, only: :show
+  resource :dashboard, only: %i[show update]
 end

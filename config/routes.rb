@@ -4,5 +4,11 @@ Rails.application.routes.draw do
   resources :items do
     resources :lendings, only: %i[create]
   end
+  resources :lendings, only: [] do 
+    member do 
+      patch :accept
+      patch :decline 
+    end
+  end
   resource :dashboard, only: %i[show update]
 end

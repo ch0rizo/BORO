@@ -11,6 +11,28 @@ class LendingsController < ApplicationController
     end
   end
 
+  # PATCH /offers/:id/accept
+  # @TODO authorize that the user should actually be allowed the offer
+  def accept
+    @lending = Lending.find(params[:id])
+    if @lending.accepted!
+      redirect_to dashboard_path, notice: 'Lending accepted'
+    else
+      redirect_to dashboard_path, notice: 'Lending could not be accepted - please try again' 
+    end
+  end
+
+  # PATCH /offers/:id/reject
+  # @TODO authorize that the user should actually be reject the offer
+  def decline
+    @lending = Lending.find(params[:id])
+    if @lending.rejected!
+      redirect_to dashboard_path, notice: 'Lending rejected'
+    else
+      redirect_to dashboard_path, notice: 'Lending could not be rejected - please try again' 
+    end
+  end
+
   private
 
   def lending_params

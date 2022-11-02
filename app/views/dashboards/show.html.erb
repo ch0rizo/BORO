@@ -1,12 +1,12 @@
-<h1>HEY <%= @user.first_name %> <%= @user.last_name %></h1>
-<p><%= @user.created_at %></p>
-<p><%= @user.phone_number %></p>
-<p><%= @user.email %></p>
-<p><%= @user.about %></p>
+<div class="container d-flex flex-column justify-content-center my-3">
+  <h2>Hello <%= @user.first_name %> <%= @user.last_name %>!</h2>
+  <h3> Your Details</h3>
+  <p><%= @user.phone_number %></p>
+  <p><%= @user.email %></p>
+  <p><%= @user.about %></p>
 
-<h2>Your Listed Items</h2>
-<% @user.items.each do |item| %>
-  <p><%= item.title %> - $<%= item.price %></p>
-<% end %>
-
-<h2>Your </h2>
+  <h3>Your Listed Items</h3>
+  <% @user.items.each do |item| %>
+    <p><%= item.title %> - $<%= item.price %></p>
+  <% end %>
+</div>

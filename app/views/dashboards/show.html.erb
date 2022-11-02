@@ -9,7 +9,6 @@
   <% @user.requests.pending.each do |lending| %>
     <p><%= lending.item.title %> - <%= lending.user.first_name %></p>
     <p><%= link_to "Accept", accept_lending_path(lending), data: {turbo_method: :patch} %> | <%= link_to "Decline", decline_lending_path(lending), data: {turbo_method: :patch} %></p>
-    
   <% end %>
 
   <h3>Your Borrowed Items</h3>

@@ -7,7 +7,7 @@
 
   <h3>Someone Wants to <br> Borrow Your:</h3>
   <% @user.requests.each do |lending| %>
-    <p><%= lending.item.title %> - <%= lending.user.first_name %> 
+    <p><%= lending.item.title %> - <%= lending.user.first_name %>
     </p>
   <% end %>
 
@@ -17,8 +17,8 @@
 <% end %>
 
   <h3>Your Reviews</h3>
-  <%# <% @user.lendings.reviews.each do |review| %> %>
-    <%# <p><%= review.rating %></p> %>
-    <%# <p><%= review.comment %></p> %>
+  <% @user.reviews.each do |review| %>
+    <p><%= review.rating %> </p>
+    <p><%= review.comment %> </p>
+  <% end %>
 </div>
-

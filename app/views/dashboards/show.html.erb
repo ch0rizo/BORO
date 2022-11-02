@@ -8,19 +8,14 @@
   <h3>Someone Wants to <br> Borrow Your:</h3>
   <% @user.requests.pending.each do |lending| %>
     <p><%= lending.item.title %> - <%= lending.user.first_name %></p>
-    <%= link_to "Accept",
-      accept_lending_path(lending),
-      data: {turbo_method: :patch}
-    %>
-  <% @user.requests.each do |lending| %>
-    <p><%= lending.item.title %> - <%= lending.user.first_name %>
-    </p>
+    <p><%= link_to "Accept", accept_lending_path(lending), data: {turbo_method: :patch} %> | <%= link_to "Decline", decline_lending_path(lending), data: {turbo_method: :patch} %></p>
+    
   <% end %>
 
-<h3>Your Borrowed Items</h3>
-<% @user.lendings.each do |lending| %>
-  <p><%= Item.find(lending.item_id).title %> - <%= lending.status %>...</p>
-<% end %>
+  <h3>Your Borrowed Items</h3>
+  <% @user.lendings.each do |lending| %>
+    <p><%= Item.find(lending.item_id).title %> - <%= lending.status %>...</p>
+  <% end %>
 
   <h3>Your Reviews</h3>
   <% @user.reviews.each do |review| %>

@@ -26,8 +26,8 @@ class LendingsController < ApplicationController
   # @TODO authorize that the user should actually be reject the offer
   def decline
     @lending = Lending.find(params[:id])
-    if @lending.rejected!
-      redirect_to dashboard_path, notice: 'Lending rejected'
+    if @lending.declined!
+      redirect_to dashboard_path, notice: 'Lending declined'
     else
       redirect_to dashboard_path, notice: 'Lending could not be rejected - please try again' 
     end

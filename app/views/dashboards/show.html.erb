@@ -12,6 +12,9 @@
       accept_lending_path(lending),
       data: {turbo_method: :patch}
     %>
+  <% @user.requests.each do |lending| %>
+    <p><%= lending.item.title %> - <%= lending.user.first_name %>
+    </p>
   <% end %>
 
 <h3>Your Borrowed Items</h3>
@@ -20,8 +23,8 @@
 <% end %>
 
   <h3>Your Reviews</h3>
-  <%# <% @user.lendings.reviews.each do |review| %> %>
-    <%# <p><%= review.rating %></p> %>
-    <%# <p><%= review.comment %></p> %>
+  <% @user.reviews.each do |review| %>
+    <p><%= review.rating %> </p>
+    <p><%= review.comment %> </p>
+  <% end %>
 </div>
-

@@ -11,7 +11,7 @@ class LendingsController < ApplicationController
     @lending.total = @total.to_i
 
     if @lending.save
-      redirect_to items_path, notice: "Request sent..."
+      redirect_to items_path, notice: "That's $#{@lending.total}"
     else
       raise
       redirect_to dashboard_path, notice: "Can't lend this Item"

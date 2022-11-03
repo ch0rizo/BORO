@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :reviews, through: :lendings
 
   validates :first_name, :last_name, :email, presence: true
+  validates :about, presence: true
   validates :email, :phone_number, uniqueness: true
   validates :phone_number, format: { with: /(\+?( |-|\.)?\d{1,2}( |-|\.)?)?(\(?\d{3}\)?|\d{3})( |-|\.)?(\d{3}( |-|\.)?\d{4})/ }, allow_blank: true
 

@@ -1,6 +1,19 @@
 <div class="container">
   <div class="container-category">
-    <h2>Categories</h2>
+    <%= image_tag "icons/BBQ.svg", width: 35, class: "style-category-icon" %>
+    <%= image_tag "icons/Bike.svg", width: 55, class: "style-category-icon" %>
+    <%= image_tag "icons/Camera.svg", width: 35, class: "style-category-icon" %>
+    <%= image_tag "icons/Chainsaw.svg", width: 50, class: "style-category-icon" %>
+    <%= image_tag "icons/Guitar.svg", width: 20, class: "style-category-icon" %>
+    <%= image_tag "icons/Kayak.svg", width: 30, class: "style-category-icon" %>
+    <%= image_tag "icons/Mic.svg", width: 25, class: "style-category-icon" %>
+    <%= image_tag "icons/Mower.svg", width: 40, class: "style-category-icon" %>
+    <%= image_tag "icons/Palette.svg", width: 40, class: "style-category-icon" %>
+    <%= image_tag "icons/Snorkel.svg", width: 35, class: "style-category-icon" %>
+    <%= image_tag "icons/Speaker.svg", width: 40, class: "style-category-icon" %>
+    <%= image_tag "icons/Surfboard.svg", width: 40, class: "style-category-icon" %>
+    <%= image_tag "icons/Tent.svg", width: 40, class: "style-category-icon" %>
+    <%= image_tag "icons/Umbrella.svg", width: 35, class: "style-category-icon" %>
   </div>
   <div class="container-index">
     <div class="container-cards">
@@ -9,7 +22,7 @@
           <%= text_field_tag :query,
             params[:query],
             class: "form-control",
-            placeholder: "Find an item"
+            placeholder: "Find an item..."
           %>
           <%= submit_tag "Search", class: "index-submit-button" %>
         <% end %>
@@ -21,9 +34,9 @@
               <%= link_to item_path(item) do %>
                 <div class="card">
                   <div class="card-image">
-                    <%= cl_image_tag item.photos_attachments[0].key, crop: :fill %>
+                    <%= cl_image_tag item.photos_attachments[0].key, height: 200, crop: :fill %>
                   </div>
-                  <div class="card-info d-flex justify-content-between align-content-center">
+                  <div class="card-info d-flex justify-content-between align-items-end">
                     <div class="card-name-price">
                       <h4> <%= item.title %> </h4>
                       <p> <%= User.find(item.user_id).first_name %> </p>

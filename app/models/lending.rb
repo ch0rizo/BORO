@@ -5,6 +5,6 @@ class Lending < ApplicationRecord
 
   enum status: [:pending, :accepted, :declined]
 
-  validates :start_end, :end_date, :total, presence: true
+  validates :start_date, :end_date, :total, presence: true
   validates :total, numericality: { greater_than_or_equal_to: 0 }
 end

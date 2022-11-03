@@ -7,25 +7,25 @@
 
 .container-index {
   display: flex;
-  border-style: solid;
+  // border-style: solid;
   border-width: 2px;
-  border-color: $storm;
+  // border-color: $storm;
   border-radius: 10px;
   height: 80vh;
 }
 
 .search-filter {
-  border-bottom: solid;
-  border-color: $storm;
+  // border-bottom: solid;
+  // border-color: $storm;
   border-width: 2px;
   border-top-left-radius: 8px;
   height: 65px;
-  background-color: #f8f9fa;
+  background-color: rgb(244, 244, 244);
 }
 
 .container-cards {
-  border-right: solid;
-  border-color: $storm;
+  // border-right: solid;
+  // border-color: $storm;
   width: 50%;
   overflow: scroll;
 }
@@ -37,12 +37,12 @@
 .index-map {
   width: 100%;
   height: 100%;
-  border-bottom-right-radius: 8px;
-  border-top-right-radius: 8px;
+  border-radius: 10px;
 }
 
 .form-control {
-  border-radius: 10px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
   width: 90%;
   padding: 10px;
   padding-top: 10px;
@@ -52,8 +52,10 @@
 }
 
 .index-submit-button {
-  border-radius: 20px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
   border-style: solid;
+  border-left: 0px;
   border-width: 1px;
   border-color: $outback;
   background-color: $snow;
@@ -62,4 +64,17 @@
 
 .search-filter ::-webkit-input-placeholder {
   color: $outback;
+}
+
+.container-category {
+  display: flex;
+  justify-content: space-evenly;
+
+  h2 {
+    margin-left: 30px;
+  }
+
+  .style-category-icon {
+    margin-left: 10px;
+  }
 }

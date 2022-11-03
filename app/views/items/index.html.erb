@@ -15,59 +15,62 @@
     <%= image_tag "icons/Tent.svg", width: 40, class: "style-category-icon" %>
     <%= image_tag "icons/Umbrella.svg", width: 35, class: "style-category-icon" %>
   </div>
-  <div class="container-index">
-    <div class="container-cards">
-      <div class="search-filter">
-        <%= form_with url: items_path, method: :get, class: "d-flex px-3 pt-2" do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Find an item..."
-          %>
-          <%= submit_tag "Search", class: "index-submit-button" %>
-        <% end %>
-      </div>
-      <div class="m-3">
-        <div class="cards">
-          <% @items.each do |item| %>
-            <% if item.photos_attachments[0] != nil %>
-              <%= link_to item_path(item) do %>
-                <div class="card">
-                  <div class="card-image">
-                    <%= cl_image_tag item.photos_attachments[0].key, height: 200, crop: :fill %>
-                  </div>
-                  <div class="card-info d-flex justify-content-between align-items-end">
-                    <div class="card-name-price">
-                      <h4> <%= item.title %> </h4>
-                      <p> <%= User.find(item.user_id).first_name %> </p>
-                      <div class="card-name-price-price">
-                        <p> <strong>$<%= item.price %></strong> / day</p>
+  <div class="d-flex">
+    <div class="container-index flex-grow">
+      <div class="container-cards">
+        <div class="search-filter">
+          <%= form_with url: items_path, method: :get, class: "d-flex px-3 pt-2" do %>
+            <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Find an item..."
+            %>
+            <%= submit_tag "Search", class: "index-submit-button" %>
+          <% end %>
+        </div>
+        <div class="m-3">
+          <div class="cards">
+            <% @items.each do |item| %>
+              <% if item.photos_attachments[0] != nil %>
+                <%= link_to item_path(item) do %>
+                  <div class="card">
+                    <div class="card-image">
+                      <%= cl_image_tag item.photos_attachments[0].key, height: 200, crop: :fill %>
+                    </div>
+                    <div class="card-info d-flex justify-content-between align-items-end">
+                      <div class="card-name-price">
+                        <h4> <%= item.title %> </h4>
+                        <p> <%= User.find(item.user_id).first_name %> </p>
+                        <div class="card-name-price-price">
+                          <p> <strong>$<%= item.price %></strong> / day</p>
+                        </div>
+                      </div>
+                      <div class="card-owner">
+                        <% if current_user == item.user %>
+                          <p>Owner</p>
+                        <% end %>
                       </div>
                     </div>
-                    <div class="card-owner">
-                      <% if current_user == item.user %>
-                        <p>Owner</p>
-                      <% end %>
-                    </div>
                   </div>
+                <% end %>
+              <% else %>
+                <div class="card-category" style="background-color: orange">
+                  <h3> <%= link_to "#{item.title}", item_path(item) %> </h3>
+                  <h6> <%= item.description %></h6>
+                  <p> $<%= item.price %> / day</p>
                 </div>
               <% end %>
-            <% else %>
-              <div class="card-category" style="background-color: orange">
-                <h3> <%= link_to "#{item.title}", item_path(item) %> </h3>
-                <h6> <%= item.description %></h6>
-                <p> $<%= item.price %> / day</p>
-              </div>
             <% end %>
-          <% end %>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="map-box">
-    <div class="index-map"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div class="map-box">
+      <div class="index-map"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
     </div>
   </div>
 </div>

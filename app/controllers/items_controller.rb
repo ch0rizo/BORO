@@ -9,11 +9,13 @@ class ItemsController < ApplicationController
         {
           lat: item.latitude,
           lng: item.longitude,
-          info_window: render_to_string(partial: "info_window", locals: {item: item})
+          info_window: render_to_string(partial: "info_window", locals: {item: item}),
+          image_url: helpers.asset_url("logo.png")
         }
       end
     end
   end
+
 
   def show
     @item = Item.find(params[:id])

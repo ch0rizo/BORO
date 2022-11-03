@@ -11,5 +11,4 @@ Rails.application.routes.draw do
     end
   end
   resource :dashboard, only: %i[show update]
-  # resources :items, only: :index
 end

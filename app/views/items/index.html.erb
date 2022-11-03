@@ -1,38 +1,32 @@
-<%= form_with url: items_path, method: :get, class: "d-flex" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find an item"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-<div class="m-3">
-  <h1 style="text-align: center;" class="my-4">Lend Me!</h1>
-  <div class="cards">
-    <% @items.each do |item| %>
-        <% if current_user != item.user_id %>
-        <% if item.photos_attachments[0] != nil %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path item.photos_attachments[0].key, height: 300, crop: :fill %>')">
-            <h3> <%= link_to "#{item.title}", item_path(item) %> </h3>
-            <h6> <%= item.description %></h6>
-            <p> $<%= item.price %> / day</p>
-            <% if current_user == item.user %>
-              <p>Owner</p>
-            <% end %>
-          </div>
-        <% else %>
-          <div class="card-category" style="background-color: orange">
-            <h3> <%= link_to "#{item.title}", item_path(item) %> </h3>
-            <h6> <%= item.description %></h6>
-            <p> $<%= item.price %> / day</p>
-          </div>
-        <% end %>
-      <% end %>
-    <% end %>
+
+<div class="container">
+  <div class="container-category">
+    <%= image_tag "icons/BBQ.svg", width: 35, class: "style-category-icon" %>
+    <%= image_tag "icons/Bike.svg", width: 55, class: "style-category-icon" %>
+    <%= image_tag "icons/Camera.svg", width: 35, class: "style-category-icon" %>
+    <%= image_tag "icons/Chainsaw.svg", width: 50, class: "style-category-icon" %>
+    <%= image_tag "icons/Guitar.svg", width: 20, class: "style-category-icon" %>
+    <%= image_tag "icons/Kayak.svg", width: 30, class: "style-category-icon" %>
+    <%= image_tag "icons/Mic.svg", width: 25, class: "style-category-icon" %>
+    <%= image_tag "icons/Mower.svg", width: 40, class: "style-category-icon" %>
+    <%= image_tag "icons/Palette.svg", width: 40, class: "style-category-icon" %>
+    <%= image_tag "icons/Snorkel.svg", width: 35, class: "style-category-icon" %>
+    <%= image_tag "icons/Speaker.svg", width: 40, class: "style-category-icon" %>
+    <%= image_tag "icons/Surfboard.svg", width: 40, class: "style-category-icon" %>
+    <%= image_tag "icons/Tent.svg", width: 40, class: "style-category-icon" %>
+    <%= image_tag "icons/Umbrella.svg", width: 35, class: "style-category-icon" %>
   </div>
   <div class="container-index">
     <div class="container-cards">
-      <div class="search-filter sticky-top">
+      <div class="search-filter">
+        <%= form_with url: items_path, method: :get, class: "d-flex px-3 pt-2" do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Find an item..."
+          %>
+          <%= submit_tag "Search", class: "index-submit-button" %>
+        <% end %>
       </div>
       <div class="m-3">
         <div class="cards">
@@ -41,9 +35,9 @@
               <%= link_to item_path(item) do %>
                 <div class="card">
                   <div class="card-image">
-                    <%= cl_image_tag item.photos_attachments[0].key, crop: :fill %>
+                    <%= cl_image_tag item.photos_attachments[0].key, height: 200, crop: :fill %>
                   </div>
-                  <div class="card-info d-flex justify-content-between align-content-center">
+                  <div class="card-info d-flex justify-content-between align-items-end">
                     <div class="card-name-price">
                       <h4> <%= item.title %> </h4>
                       <p> <%= User.find(item.user_id).first_name %> </p>
@@ -70,12 +64,11 @@
       </div>
     </div>
   </div>
-
-  <div class="map-box"></div>
-</div>
-
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  <div class="map-box">
+    <div class="index-map"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
 </div>

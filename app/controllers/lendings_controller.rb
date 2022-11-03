@@ -7,7 +7,7 @@ class LendingsController < ApplicationController
     if @lending.save
       redirect_to items_path, notice: "Request sent..."
     else
-      render :new, status: :unprocessable_entity
+      redirect_to dashboard_path, alert: "Can't lend this Item"
     end
   end
 

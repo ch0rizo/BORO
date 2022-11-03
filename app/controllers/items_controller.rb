@@ -1,7 +1,24 @@
 class ItemsController < ApplicationController
   def index
     @items = Item.all
+    @items_geocoded = @items.geocoded
+    @markers = @items_geocoded.map do |item|
+      {
+        lat: item.latitude,
+        lng: item.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {item: item}),
+        image_url: helpers.asset_url("logo.png")
+      }
+    end
   end
+
+  # def geocoded_by :lat, :lon do |obj,results|
+  #   if geo = results.first
+  #     obj.city    = geo.city
+  #     obj.zipcode = geo.postal_code
+  #     obj.country = geo.country_code
+  #   end
+  # end
 
   def show
     @item = Item.find(params[:id])
@@ -52,6 +69,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:title, :user_id, :description, :deposit, :price, :category, photos: [])
+    params.require(:item).permit(:title, :user_id, :description, :deposit, :price, :category, :address, photos: [])
   end
 end

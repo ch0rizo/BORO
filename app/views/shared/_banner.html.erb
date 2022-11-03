@@ -1,14 +1,14 @@
-<div class="banner" style="background-image: url(<%= asset_path 'homepage.png' %>);">
+<div class="banner" style="background-image: url(<%= asset_path 'HomePageBanner-01.png' %>);">
   <div class="container_banner">
-          <h1>BORO makes <strong>borrowing</strong> things <strong> easy</strong>!</h1>
+          <h1 class="home-title cosmos-color">Boro makes borrowing anything easy!</h1>
           <p>Don't Buy it, Boro it.</p>
-            <div>
+            <div class=>
               <%= form_with url: items_path, method: :get, class: "d-flex" do %>
                 <%= text_field_tag :query,
                     params[:query],
                     class: "form-control",
                     placeholder: "Find an item"%>
-                <%= submit_tag "Search", class: "btn btn-primary" %>
+                <%= submit_tag "Search", class: "index-submit-button" %>
               <% end %>
             </div>
         <div class="offer">

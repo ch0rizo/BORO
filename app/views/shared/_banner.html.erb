@@ -2,14 +2,15 @@
   <div class="container_banner">
           <h1>BORO makes <strong>borrowing</strong> things <strong> easy</strong>!</h1>
           <p>Don't Buy it, Boro it.</p>
-          <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-        <div class="search-form-control form-group">
-          <input class="form-control string required" type="text" name="search[query]" id="search_query" />
-          <button name="button" type="submit" class="btn btn-flat">
-          <i class="fas fa-search"></i> <%= link_to 'Search', items_path %>
-          </button>
-        </div>
-          <% end %>
+            <div>
+              <%= form_with url: items_path, method: :get, class: "d-flex" do %>
+                <%= text_field_tag :query,
+                    params[:query],
+                    class: "form-control",
+                    placeholder: "Find an item"%>
+                <%= submit_tag "Search", class: "btn btn-primary" %>
+              <% end %>
+            </div>
         <div class="offer">
           <p>or</p>
           <button name="button2" type="submit" class="btn btn-banner" >

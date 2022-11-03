@@ -4,10 +4,17 @@ class LendingsController < ApplicationController
     @lending.user = current_user
     @lending.item = Item.find(params[:item_id])
 
+    # Calculates the total price
+    @total_time = (@lending.end_date - @lending.start_date).to_i
+    @item_price = Item.find(@lending.item_id).price
+    @total = @item_price * @total_time
+    @lending.total = @total.to_i
+
     if @lending.save
       redirect_to items_path, notice: "Request sent..."
     else
-      redirect_to dashboard_path, alert: "Can't lend this Item"
+      raise
+      redirect_to dashboard_path, notice: "Can't lend this Item"
     end
   end
 

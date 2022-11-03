@@ -1,2 +1,35 @@
 // Import page-specific CSS files here.
-@import "home";
+
+.container-category {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.container-index {
+  display: flex;
+  border-style: solid;
+  border-width: 2px;
+  border-color: $storm;
+  border-radius: 10px;
+  height: 80vh;
+}
+
+.search-filter {
+  border-bottom: solid;
+  border-color: $storm;
+  border-width: 2px;
+  border-top-left-radius: 8px;
+  height: 70px;
+  background-color: #f8f9fa;
+}
+
+.container-cards {
+  border-right: solid;
+  border-color: $storm;
+  width: 50%;
+  overflow: scroll;
+}
+
+.map-box {
+  width: 50%;
+}

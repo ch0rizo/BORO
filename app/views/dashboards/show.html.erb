@@ -14,7 +14,7 @@
       <p>Email: <%= @user.email %></p>
     </div>
     <div class="bio">
-      <p><strong>About Me:</strong> <%= @user.about %></p>
+      <p><strong>About Me:</strong> <%= @user.about.truncate(600) %></p>
     </div>
   </div>
   <h2>Activity Feed</h2>

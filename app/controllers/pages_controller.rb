@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
   def home
   end
-end
 
+  def works
+  end
+end

@@ -1,0 +1,57 @@
+.works-container {
+  margin: auto;
+  width: 70vw;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  align-items: center;
+  align-content: center;
+  justify-content: space-evenly;
+}
+.works-title {
+  font-size: 64px;
+  text-align: left;
+  padding: 0;
+  line-height:100%;
+  color: black;
+}
+
+.works-para {
+  font-size: 24px;
+  text-align: left;
+  padding-top: 20px;
+}
+
+.icon-cont {
+  display: flex;
+}
+
+.copy-cont {
+  width: 50%;
+  margin-right: 20px;
+}
+
+.text-align-right {
+  text-align: right;
+}
+
+.outback-color {
+  filter: invert(48%) sepia(7%) saturate(6147%) hue-rotate(329deg) brightness(107%) contrast(107%);
+}
+
+.cosmos-color {
+  filter: invert(20%) sepia(53%) saturate(2964%) hue-rotate(230deg) brightness(81%) contrast(97%);
+}
+
+.daintree-color {
+  filter: invert(62%) sepia(83%) saturate(422%) hue-rotate(86deg) brightness(94%) contrast(81%);
+}
+
+.eureka-color {
+  filter: invert(77%) sepia(51%) saturate(799%) hue-rotate(355deg) brightness(97%) contrast(109%);
+}
+
+
+
+.white-background {
+  background-color: white;
+}

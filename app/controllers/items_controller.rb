@@ -15,7 +15,8 @@ class ItemsController < ApplicationController
       end
     end
   end
-  
+
+
   def show
     @item = Item.find(params[:id])
     @lending = Lending.new

@@ -1,60 +1,57 @@
-.card-product {
-  overflow: hidden;
-  height: 120px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
+.card {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  border-style: solid;
+  border-color: $cosmos;
 }
 
-.card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
-
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-product .card-product-infos {
-  padding: 16px;
-}
-
-.card-category {
-  background-size: cover;
-  background-position: center;
-  height: 180px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.card-category p {
-  font-size: 14pt;
+.card-link {
+  text-decoration: none;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
+  a {
+    text-decoration: none;
+    color: $cave;
+  }
+}
+
+.card-owner {
+  margin-top: 60px;
+  padding-right: 10px;
+}
+
+.card-image img {
+  width: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card-info {
+  padding: 15px;
+
+  p {
+    padding: 2px;
+    margin: 0px;
+    color: $cave;
+  }
+
+  h4 {
+    padding-top: 5px;
+    color: $cave;
+  }
+}
+
+.card-name-price {
+  .card-name-price-price {
+    p {
+      color: $daintree;
+    }
+  }
 }
 
 // Smallest device
@@ -81,13 +78,13 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }

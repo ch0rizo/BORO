@@ -1,0 +1,29 @@
+.nav-link-login {
+  color: $outback;
+  text-decoration: none;
+  background-color: white;
+  border-radius: 30px;
+  padding: 10px 15px;
+  border-style: inset;
+  border-color: $outback;
+  border: 2px solid;
+  a {
+    color: $outback;
+  }
+}
+
+.nav-link-login:hover {
+  color: white;
+  background-color: $outback;
+  border-color: $outback;
+}
+
+.navbar-link {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.navbar-link-text {
+  color: $cosmos;
+  text-decoration: none;
+}

@@ -1,7 +1,22 @@
 class ItemsController < ApplicationController
   def index
     @items = Item.all
+    @markers = @flats.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {flat: flat})
+      }
+    end
   end
+
+  # def geocoded_by :lat, :lon do |obj,results|
+  #   if geo = results.first
+  #     obj.city    = geo.city
+  #     obj.zipcode = geo.postal_code
+  #     obj.country = geo.country_code
+  #   end
+  # end
 
   def show
     @item = Item.find(params[:id])

@@ -1,0 +1,9 @@
+<h2><%= item.title %></h2>
+
+<p><strong>Address: </strong><%= item.address %></p>
+<p><strong>Description: </strong><%= item.description %></p>
+<p><strong>Price: </strong><%=item.price %>€</p>
+<p><strong>Deposit: </strong><%=item.deposit %>€</p>
+<% if item.photos.attached? %>
+  <%= cl_image_tag item.photos.first.key %>
+<%end  %>

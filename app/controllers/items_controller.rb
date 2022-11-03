@@ -15,14 +15,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  # def geocoded_by :lat, :lon do |obj,results|
-  #   if geo = results.first
-  #     obj.city    = geo.city
-  #     obj.zipcode = geo.postal_code
-  #     obj.country = geo.country_code
-  #   end
-  # end
-
   def show
     @item = Item.find(params[:id])
     @lending = Lending.new

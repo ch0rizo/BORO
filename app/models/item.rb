@@ -10,4 +10,5 @@ class Item < ApplicationRecord
   validates :category, inclusion: %w[Stereo Tools Camera Art Surfboards Scubagear Grill Bike Utilities Camping Instruments Wilderness Other]
   validates :price, numericality: { greater_than_or_equal_to: 0 }
   validates :deposit, numericality: { greater_than_or_equal_to: 0 }
+  validates :title, length: { minimum: 25 }
 end

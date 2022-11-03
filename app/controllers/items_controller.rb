@@ -1,11 +1,13 @@
 class ItemsController < ApplicationController
   def index
     @items = Item.all
-    @markers = @flats.geocoded.map do |flat|
+    @items_geocoded = @items.geocoded
+    @markers = @items_geocoded.map do |item|
       {
-        lat: flat.latitude,
-        lng: flat.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {flat: flat})
+        lat: item.latitude,
+        lng: item.longitude,
+        info_window: render_to_string(partial: "info_window", locals: {item: item}),
+        image_url: helpers.asset_url("logo.png")
       }
     end
   end
@@ -67,6 +69,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:title, :user_id, :description, :deposit, :price, :category, photos: [])
+    params.require(:item).permit(:title, :user_id, :description, :deposit, :price, :category, :address, photos: [])
   end
 end

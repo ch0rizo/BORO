@@ -3,18 +3,19 @@ class ItemsController < ApplicationController
     if params[:query].present?
       @items = Item.search_by_title_and_description (params[:query])
     else
-    @items = Item.all
-    @items_geocoded = @items.geocoded
-    @markers = @items_geocoded.map do |item|
-      {
-        lat: item.latitude,
-        lng: item.longitude,
-        info_window: render_to_string(partial: "info_window", locals: {item: item}),
-        image_url: helpers.asset_url("logo.png")
-      }
+      @items = Item.all
+      @items_geocoded = @items.geocoded
+      @markers = @items_geocoded.map do |item|
+        {
+          lat: item.latitude,
+          lng: item.longitude,
+          info_window: render_to_string(partial: "info_window", locals: {item: item}),
+          image_url: helpers.asset_url("logo.png")
+        }
+      end
     end
   end
-
+  
   def show
     @item = Item.find(params[:id])
     @lending = Lending.new

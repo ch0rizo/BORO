@@ -7,4 +7,13 @@ class Item < ApplicationRecord
   validates :title, presence: true
   validates :description, length: { maximum: 500 }
   validates :category, inclusion: %w[Stereo Tools Camera Art Surfboards Scubagear Grill Bike Utilities Camping Instruments Wilderness Other]
+
+  include PgSearch::Model
+
+  pg_search_scope :search_by_title_and_description,
+    against: [ :title, :description ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
 end

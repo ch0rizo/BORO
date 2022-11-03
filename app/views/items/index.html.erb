@@ -1,3 +1,11 @@
+<%= form_with url: items_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find an item"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
 <div class="m-3">
   <h1 style="text-align: center;" class="my-4">Lend Me!</h1>
   <div class="cards">

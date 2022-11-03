@@ -13,4 +13,10 @@ class Item < ApplicationRecord
   validates :deposit, numericality: { greater_than_or_equal_to: 0 }
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+  
+pg_search_scope :search_by_title_and_description,
+    against: [ :title, :description ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end

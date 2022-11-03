@@ -1,5 +1,8 @@
 class ItemsController < ApplicationController
   def index
+    if params[:query].present?
+      @items = Item.search_by_title_and_description (params[:query])
+    else
     @items = Item.all
     @items_geocoded = @items.geocoded
     @markers = @items_geocoded.map do |item|

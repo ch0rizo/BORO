@@ -1,7 +1,6 @@
 class Item < ApplicationRecord
   has_many_attached :photos
   has_many :lendings, dependent: :destroy
-
   belongs_to :user
 
   # Can be favorited

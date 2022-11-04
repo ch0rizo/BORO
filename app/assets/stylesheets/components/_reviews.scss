@@ -3,15 +3,17 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  height: 40vh;
-  background-color: #eeeded;
+  background-color: white;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
-.review {
+.review-card{
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   margin: 1%;
+  padding-top: 50px;
 }
 
 .review img {

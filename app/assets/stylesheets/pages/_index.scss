@@ -41,10 +41,7 @@
 }
 
 .form-control {
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 0px;
-  border-top-right-radius: 0px;
+  border-radius: 15px;
   width: 90%;
   padding: 10px;
   padding-top: 10px;
@@ -84,7 +81,8 @@
     margin-left: 10px;
   }
   .style-category-icon:hover {
-  filter: invert(77%) sepia(51%) saturate(799%) hue-rotate(355deg) brightness(97%) contrast(109%);
+    filter: invert(77%) sepia(51%) saturate(799%) hue-rotate(355deg)
+      brightness(97%) contrast(109%);
   }
 }
 
@@ -94,4 +92,17 @@
   position: absolute;
   right: 10px;
   top: 10px;
+}
+
+.form-control-index {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+  width: 90%;
+  padding: 10px;
+  padding-top: 10px;
+  border-style: solid;
+  border-color: $outback;
+  background-color: $snow;
 }

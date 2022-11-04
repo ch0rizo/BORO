@@ -1,6 +1,13 @@
 <div class="container">
   <div class="bubble1">
-    <h1>Welcome to your dashboard <br> <em><%= @user.first_name.capitalize %></em></h1>
+    <% t = Time.now  %>
+    <% if t.hour < 12 %>
+      <h1><FONT COLOR="#24292F">Good morning, </FONT><strong><%= @user.first_name.capitalize %></strong></h1>
+      <% elsif t.hour > 12 && t.hour < 18 %>
+        <h1><FONT COLOR="#24292F">Good afternoon, </FONT><strong><%= @user.first_name.capitalize %></strong></h1>
+      <% else %>
+        <h1><FONT COLOR="#24292F">Good evening, </FONT><strong><%= @user.first_name.capitalize %></strong></h1>
+      <% end %>
   </div>
   <div class="bubble">
     <div class="image">
@@ -17,14 +24,6 @@
       <p><strong>About Me:</strong> <%= @user.about.truncate(500) %></p>
     </div>
 
-    <% t = Time.now  %>
-    <% if t.hour < 12 %>
-      <h1><FONT COLOR="#24292F">Good morning, </FONT><strong><%= @user.first_name.capitalize %></strong></h1>
-      <% elsif t.hour > 12 && t.hour < 18 %>
-        <h1><FONT COLOR="#24292F">Good afternoon, </FONT><strong><%= @user.first_name.capitalize %></strong></h1>
-      <% else %>
-        <h1><FONT COLOR="#24292F">Good evening, </FONT><strong><%= @user.first_name.capitalize %></strong></h1>
-      <% end %>
 
   </div>
   <h2>Activity Feed</h2>
@@ -81,4 +80,3 @@
   <p><%= review.rating %> </p>
   <p><%= review.comment %> </p>
 <% end %>
-

@@ -2,31 +2,14 @@
   <div class="bubble1">
     <% t = Time.now  %>
     <% if t.hour < 12 %>
-      <h1><FONT COLOR="#24292F">Good morning, </FONT><strong><%= @user.first_name.capitalize %></strong></h1>
+      <h1 class="bubble1-h1">FONT COLOR="#24292F">Good morning, </FONT><strong><%= @user.first_name.capitalize %>!</strong></h1>
       <% elsif t.hour > 12 && t.hour < 18 %>
-        <h1><FONT COLOR="#24292F">Good afternoon, </FONT><strong><%= @user.first_name.capitalize %></strong></h1>
+        <h1 class="bubble1-h1"><FONT COLOR="#24292F">Good afternoon, </FONT><strong><%= @user.first_name.capitalize %>!</strong></h1>
       <% else %>
-        <h1><FONT COLOR="#24292F">Good evening, </FONT><strong><%= @user.first_name.capitalize %></strong></h1>
+        <h1 class="bubble1-h1"><FONT COLOR="#24292F">Good evening, </FONT><strong><%= @user.first_name.capitalize %>!</strong></h1>
       <% end %>
   </div>
-  <div class="bubble">
-    <div class="image">
-      <%= cl_image_tag("user_wgpqoy.png", :width=>115, :crop=>"fill") %>
-      <p><%= link_to "Update Profile", edit_user_registration_path %></p>
-    </div>
-    <div class="info">
-      <h3> Your Info:</h3>
-      <p>Name: <%= @user.first_name %> <%= @user.last_name %> </p>
-      <p>Phone number: <%= @user.phone_number %></p>
-      <p>Email: <%= @user.email %></p>
-    </div>
-    <div class="bio">
-      <p><strong>About Me:</strong> <%= @user.about.truncate(500) %></p>
-    </div>
-
-
-  </div>
-  <h2>Activity Feed</h2>
+  <h2 style="margin-top: 150px">Activity Feed</h2>
   <div class="container d-flex justify-content-between align-content-center px-0">
     <div class="bubbleA">
       <h3>Lending out <strong><%= @user.lendings.count %></strong> items</h3>

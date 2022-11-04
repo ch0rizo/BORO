@@ -5,6 +5,9 @@ class User < ApplicationRecord
   has_many :requests, through: :items, source: :lendings
   has_many :reviews, through: :lendings
 
+  # Can favorite
+  acts_as_favoritor
+
   validates :first_name, :last_name, :email, presence: true
   validates :about, presence: true
   validates :email, :phone_number, uniqueness: true

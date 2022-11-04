@@ -46,6 +46,9 @@ gem "faker"
 # Dotenv-rails
 gem "dotenv-rails", groups: [:development, :test]
 
+# Favorite gem
+gem 'acts_as_favoritor'
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 

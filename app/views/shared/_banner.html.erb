@@ -11,14 +11,14 @@
                 <%= submit_tag "Search", class: "index-submit-button" %>
               <% end %>
             </div>
-        <div class="offer">
+        <div class="offer pt-2">
           <p>or</p>
-          <button name="button2" type="submit" class="btn btn-banner mt-2">
-            <i class="fa-solid fa-list"></i></i>
+          <button name="button2" type="submit" class="login-green" >
+            <i></i></i>
             <% if current_user %>
-              <%= link_to 'List Item', new_item_path %>
+              <%= link_to 'List an Item', new_item_path %>
               <% else %>
-              <%= link_to 'List Item', new_user_session_path %>
+              <%= link_to 'List an Item', new_user_session_path %>
               <% end %>
           </button>
         </div>

@@ -13,6 +13,72 @@
   }
 }
 
+.password-btn {
+  color: $outback;
+  text-decoration: none;
+  background-color: white;
+  border-radius: 30px;
+  padding: 10px 15px;
+  border-style: inset;
+  border-color: $outback;
+  border: 2px solid;
+  a {
+    color: $outback;
+  }
+}
+
+.password-btn:hover {
+  color: white;
+  background-color: $outback;
+  border-color: $outback;
+}
+
+.login-green {
+  color: $daintree;
+  text-decoration: none;
+  background-color: white;
+  border-radius: 30px;
+  padding: 10px 15px;
+  border-style: inset;
+  border-color: $outback;
+  border: 2px solid;
+  a {
+    color: $daintree;
+    text-decoration: none;
+  }
+}
+
+.signup-btn {
+  color: $cosmos;
+  text-decoration: none;
+  background-color: white;
+  border-radius: 30px;
+  padding: 10px 15px;
+  border-style: inset;
+  border-color: $outback;
+  border: 2px solid;
+  a {
+    color: $cosmos;
+  }
+}
+
+.signup-btn:hover {
+  color: white;
+  background-color: $cosmos;
+  border-color: $cosmos;
+}
+
+
+
+.login-green:hover {
+  color: white;
+  background-color: $daintree;
+  border-color: $daintree;
+  a {
+    color: white;
+  }
+}
+
 .nav-link-login:hover {
   color: white;
   background-color: $outback;

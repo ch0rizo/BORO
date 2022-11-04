@@ -1,9 +1,16 @@
 <div class="container">
   <div class="bubble1">
-    <h1>Welcome to your dashboard <br> <em><%= @user.first_name.capitalize %></em></h1>
+    <% t = Time.now  %>
+    <% if t.hour < 12 %>
+      <h1><FONT COLOR="#24292F">Good morning, </FONT><strong><%= @user.first_name.capitalize %></strong></h1>
+      <% elsif t.hour > 12 && t.hour < 18 %>
+        <h1><FONT COLOR="#24292F">Good afternoon, </FONT><strong><%= @user.first_name.capitalize %></strong></h1>
+      <% else %>
+        <h1><FONT COLOR="#24292F">Good evening, </FONT><strong><%= @user.first_name.capitalize %></strong></h1>
+      <% end %>
   </div>
   <h2>Activity Feed</h2>
-  <div class="container d-flex justify-content-between align-content-center">
+  <div class="container d-flex justify-content-between align-content-center px-0">
     <div class="bubbleA">
       <h3>Lending out <strong><%= @user.lendings.count %></strong> items</h3>
       <ul>
@@ -49,9 +56,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-

@@ -4,6 +4,8 @@ class Item < ApplicationRecord
 
   belongs_to :user
 
+  # Can be favorited
+  acts_as_favoritable
 
   validates :title, :description, :category, :price, :deposit, presence: true
   validates :description, length: { maximum: 500 }

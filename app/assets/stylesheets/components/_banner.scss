@@ -73,6 +73,9 @@
 .offer {
   display: flex;
   align-items: baseline;
+  p {
+    padding-right: 20px;
+  }
 }
 
 .offer .btn-banner {
@@ -80,8 +83,9 @@
 }
 
 .btn-banner {
-  background-color: #bdf0d9;
+  background-color: $daintree;
   margin-top: 1vh;
   margin-left: 1vh;
   border-radius: 15px;
+  text-decoration: none;
 }

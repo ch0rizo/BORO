@@ -13,7 +13,6 @@ class LendingsController < ApplicationController
     if @lending.save
       redirect_to items_path, notice: "That's $#{@lending.total}"
     else
-      raise
       redirect_to dashboard_path, notice: "Can't lend this Item"
     end
   end

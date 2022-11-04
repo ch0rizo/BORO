@@ -64,8 +64,8 @@
   border-left: 0px;
   border-width: 1px;
   border-color: $outback;
-  background-color: $snow;
-  color: $outback;
+  background-color: $outback;
+  color: $snow;
 }
 
 .search-filter ::-webkit-input-placeholder {
@@ -83,4 +83,12 @@
   .style-category-icon {
     margin-left: 10px;
   }
+}
+
+.fa-heart {
+  color: $eureka;
+  font-size: 20px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }

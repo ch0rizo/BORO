@@ -1,0 +1,7 @@
+ <div class="style-category-heart">
+                        <% if current_user.favorited?(item)  %>
+                          <%= link_to "<i class='fa-solid fa-heart'></i>".html_safe, item_favorite_path(item), data: { turbo_method: :delete } %>
+                        <% else %>
+                          <%= link_to "<i class='fa-regular fa-heart'></i>".html_safe, item_favorite_path(item), data: { turbo_method: :post } %>
+  <% end %>
+</div>

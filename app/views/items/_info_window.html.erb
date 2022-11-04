@@ -1,3 +1,10 @@
+ <div class="style-category-heart">
+                        <% if current_user.favorited?(item)  %>
+                          <%= link_to "<i class='fa-solid fa-heart'></i>".html_safe, item_favorite_path(item), data: { turbo_method: :delete } %>
+                        <% else %>
+                          <%= link_to "<i class='fa-regular fa-heart'></i>".html_safe, item_favorite_path(item), data: { turbo_method: :post } %>
+  <% end %>
+</div>
 
 <% if item.photos.attached? %>
   <%= cl_image_tag item.photos.first.key %>
@@ -13,6 +20,5 @@
     <li class="list-group-item"><strong>Deposit: </strong><%=item.deposit %>€</li>
     <li class="list-group-item"><div class="card-body2">
        <%= link_to 'Rent Item', item_path(item), class: "btn btn-outline-dark"  %>
-       <%= link_to 'Mark as favourite', item_path(item), class: "btn btn-outline-dark"  %>
-    </div></li>
+  </li>
   </ul>

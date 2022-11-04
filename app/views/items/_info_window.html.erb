@@ -1,9 +1,18 @@
-<h2><%= link_to item.title, item_path(item) %></h2>
 
-<p><strong>Address: </strong><%= item.address %></p>
-<p><strong>Description: </strong><%= item.description %></p>
-<p><strong>Price: </strong><%=item.price %>€</p>
-<p><strong>Deposit: </strong><%=item.deposit %>€</p>
 <% if item.photos.attached? %>
   <%= cl_image_tag item.photos.first.key %>
 <%end  %>
+
+  <div class="card-body">
+    <h4 class="card-title"><%= link_to item.title, item_path(item) %></h4>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><strong>Description: </strong><%= item.description.truncate(23,separator: /\s/)%> <strong> <%= link_to "Read More!", item_path(item) %> </strong></li>
+    <li class="list-group-item"><strong>Address: </strong><%= item.address %></li>
+    <li class="list-group-item"><strong>Price: </strong><%=item.price %>€</li>
+    <li class="list-group-item"><strong>Deposit: </strong><%=item.deposit %>€</li>
+    <li class="list-group-item"><div class="card-body2">
+       <%= link_to 'Rent Item', item_path(item), class: "btn btn-outline-dark"  %>
+       <%= link_to 'Mark as favourite', item_path(item), class: "btn btn-outline-dark"  %>
+    </div></li>
+  </ul>

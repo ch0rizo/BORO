@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :items do
     resources :lendings, only: %i[create]
+    resource :favorite, only: %i[create destroy]
   end
   resources :lendings, only: [] do
     member do

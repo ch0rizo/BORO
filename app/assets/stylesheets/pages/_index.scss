@@ -1,8 +1,8 @@
 // Import page-specific CSS files here.
 
 .container-category {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .container-index {
@@ -53,6 +53,10 @@
   background-color: $snow;
 }
 
+#rounded-corners {
+  border-radius: 15px;
+}
+
 .index-submit-button {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -60,8 +64,8 @@
   border-left: 0px;
   border-width: 1px;
   border-color: $outback;
-  background-color: $snow;
-  color: $outback;
+  background-color: $outback;
+  color: $snow;
 }
 
 .search-filter ::-webkit-input-placeholder {
@@ -79,4 +83,15 @@
   .style-category-icon {
     margin-left: 10px;
   }
+  .style-category-icon:hover {
+  filter: invert(77%) sepia(51%) saturate(799%) hue-rotate(355deg) brightness(97%) contrast(109%);
+  }
+}
+
+.fa-heart {
+  color: $eureka;
+  font-size: 20px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }

@@ -9,7 +9,6 @@
   // position: fixed;
   bottom: 0;
   width: vw;
-  margin-top: 100px;
 }
 
 .footer-copyright {
@@ -44,4 +43,13 @@
 
 .notices-section {
   background: $cosmos;
+}
+
+.spacer-100-px {
+  margin: auto;
+  width: 99vw;
+  padding-top: 100px;
+  align-items: center;
+  align-content: center;
+  justify-content: space-evenly;
 }

@@ -12,9 +12,8 @@ h2 {
   font-family: $headers-font;
 }
 
-
 .bubble1 {
-  margin-top: 150px;
+  margin-top: 100px;
 }
 
 .bubbleA {
@@ -66,5 +65,16 @@ h2 {
     p {
       font-size: 15px;
     }
+  }
+}
+
+.dashboard-links {
+  li {
+    padding-bottom: 5px;
+  }
+  a {
+    text-decoration: none;
+    font-size: 16px;
+    color: $cave;
   }
 }

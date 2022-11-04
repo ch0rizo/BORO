@@ -10,19 +10,21 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Market", items_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Inbox", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://res.cloudinary.com/dhyxfzmqi/image/upload/c_scale,w_100/v1667416031/user_wgpqoy.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
-            </div>
-          </li>
+          <div class="nav-logged-in">
+            <li class="navbar-link">
+              <%= link_to "Borrow an item", items_path, class: "navbar-link-text" %>
+            </li>
+            <li class="navbar-link">
+              <%= link_to "Lend an item", new_item_path, class: "navbar-link-text" %>
+            </li>
+            <li class="nav-item dropdown">
+              <%= image_tag "https://res.cloudinary.com/dhyxfzmqi/image/upload/c_scale,w_100/v1667416031/user_wgpqoy.png", class: "avatar dropdown-toggle outback-color", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+              </div>
+            </li>
+          </div>
         <% else %>
           <li class="navbar-link">
             <%= link_to "How it works", how_it_works_path, class: "navbar-link-text" %>

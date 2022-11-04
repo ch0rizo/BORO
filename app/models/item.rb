@@ -1,9 +1,10 @@
 class Item < ApplicationRecord
   has_many_attached :photos
   has_many :lendings, dependent: :destroy
-
   belongs_to :user
 
+  # Can be favorited
+  acts_as_favoritable
 
   validates :title, :description, :category, :price, :deposit, presence: true
   validates :description, length: { maximum: 500 }

@@ -9,6 +9,7 @@
   border: 2px solid;
   a {
     color: $outback;
+    text-decoration: none;
   }
 }
 
@@ -92,4 +93,25 @@
 .navbar-link-text {
   color: $cosmos;
   text-decoration: none;
+}
+
+.main_button {
+  border-color: #33cc66;
+  background-color: white;
+  border-radius: 20px;
+  border-width: 1.5px
+}
+
+.main_button:hover{
+  background-color: #33cc66;
+  color: white;
+}
+
+.form-select {
+    width: 90%;
+    padding: 10px;
+    padding-top: 10px;
+    border-style: solid;
+    border-color: #ff6633;
+    background-color: #ffffff;
 }

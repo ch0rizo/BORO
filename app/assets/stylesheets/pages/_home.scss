@@ -1,1 +1,15 @@
-// Specific CSS for your home-page
+.homepage-reviews {
+  display: flex;
+  margin-top: 10px;
+  text-align: center;
+  padding: 50px;
+
+  p {
+    font-size: 20px;
+  }
+}
+
+.container_review {
+  justify-content: center;
+  align-items: center;
+}

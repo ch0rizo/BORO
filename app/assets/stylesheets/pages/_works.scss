@@ -7,6 +7,7 @@
   align-content: center;
   justify-content: space-evenly;
 }
+
 .works-title {
   font-size: 64px;
   text-align: left;
@@ -58,8 +59,16 @@
   filter: invert(77%) sepia(51%) saturate(799%) hue-rotate(355deg) brightness(97%) contrast(109%);
 }
 
-
-
 .white-background {
   background-color: white;
+}
+
+.form-container {
+  margin: auto;
+  width: 70vw;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
 }

@@ -22,8 +22,5 @@ puts '> Creating Users and Items'
   end
 end
 
-
-
-# NEW
 puts '> Finished seeding!'
 puts "> Made #{User.count} users, and #{Item.count} items"

@@ -20,15 +20,15 @@
   <h2>Activity Feed</h2>
   <div class="container d-flex justify-content-between align-content-center">
     <div class="bubbleA">
-      <h3>Lending out <strong><%= @user.lendings.count %></strong> items</h3> 
-      <ul style="list-style: none"> 
+      <h3>Lending out <strong><%= @user.lendings.count %></strong> items</h3>
+      <ul style="list-style: none">
         <% @user.lendings.each do |lending| %>
           <li><%= Item.find(lending.item_id).title %> - <%= lending.status %>...</li>
         <% end %>
       </ul>
     </div>
     <div class="bubbleA">
-      <h3><strong><%= @user.requests.count %></strong> People Wants to Borrow <br> Your Items</h3>
+      <h3><strong><%= @user.requests.count %></strong> Borrow requests</h3>
       <ul style="list-style: none">
         <% @user.requests.pending.each do |lending| %>
           <li><%= lending.item.title %> - <%= lending.user.first_name %></li>
@@ -49,4 +49,3 @@
   <p><%= review.rating %> </p>
   <p><%= review.comment %> </p>
 <% end %>
-

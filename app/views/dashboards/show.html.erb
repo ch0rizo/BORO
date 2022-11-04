@@ -22,6 +22,16 @@
       </ul>
     </div>
   </div>
+  <h2>Favorites</h2>
+  <div class="bubbleA">
+    <ul>
+      <% @user.all_favorites.each do |favorite| %>
+      <div class="dashboard-links">
+        <li><strong><%= link_to "#{Item.find(favorite.favoritable_id).title}" %></strong> by <%= User.find(favorite.favoritor_id).first_name %></li>
+      </div>
+      <% end %>
+    </ul>
+  </div>
   <h2>Your Profile</h2>
   <div class="bubble">
     <div class="image">

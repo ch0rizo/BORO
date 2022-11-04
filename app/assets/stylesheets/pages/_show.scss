@@ -1,0 +1,33 @@
+.container-show {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  width: 400px;
+  border-style: solid;
+  border-radius: 15px;
+}
+
+.show-lend-me {
+  margin-top: 25px;
+  border-style: solid;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.show-button {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 15px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.show-card-info-spe {
+  padding: 15px;
+  p {
+    color: $daintree;
+  }
+}

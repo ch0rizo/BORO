@@ -3,8 +3,14 @@
     rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
     rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
   width: 400px;
-  border-style: solid;
   border-radius: 15px;
+}
+
+.container-show-item {
+  border-style: solid;
+  border-color: black;
+  border-radius: 15px;
+  padding: 0px;
 }
 
 .show-lend-me {
@@ -30,4 +36,13 @@
   p {
     color: $daintree;
   }
+}
+
+.show-review {
+  margin-top: 50px;
+  margin-left: 200px;
+}
+
+.show-review-review {
+  width: 600px;
 }
